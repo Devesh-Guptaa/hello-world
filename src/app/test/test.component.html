@@ -1,0 +1,83 @@
+<p>Hello {{name.toUpperCase()}}</p>
+<input [disabled]="order" type="text" value="Empty">
+<h2 class={{className2}}>Hello</h2>
+
+<button (click)="onclick()">Greet</button>
+<button (click)="order = true">Greet</button>
+
+<input #myInput type="text">
+<button (click)="print(myInput)">Enter</button><br><br>
+
+
+
+<input [(ngModel)]="output" type="text">
+{{output}}
+
+
+
+
+
+<div *ngIf="show; else dissallow">
+    div without then statement.
+</div>
+
+<div *ngIf="show; then allow; else dissallow"></div>
+<ng-template #allow>
+    <h2> Allow </h2>
+</ng-template>
+
+<ng-template #dissallow>
+    <h2>Disallow </h2>
+</ng-template>
+
+
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">
+        My Color is Red
+    </div>
+    <div *ngSwitchCase="'blue'">
+        My Color is Blue
+    </div>
+    <div *ngSwitchCase="'green'">
+        My Color is Green
+    </div>
+</div>
+
+
+
+<div *ngFor="let i of colors; index as idx">
+    {{i}} {{idx}}
+</div><br>
+<div *ngFor="let i of colors; first as f">
+    {{i}} {{f}}
+</div><br>
+<div *ngFor="let i of colors; odd as o">
+    {{i}} {{o}}
+</div>
+
+
+
+<!-- Data from Parent -->
+<div>
+    <br>
+    <h2>{{data}}</h2>
+</div>
+
+<!-- Data to Parent -->
+<div>
+    <button (click)="func()">childToParent</button>
+</div>
+
+<!-- Pipes -->
+{{Fullname | lowercase}}<br>
+{{Fullname | uppercase}}<br>
+{{Fullname | titlecase}}<br>
+{{Fullname | slice:7}}<br>
+{{Fullname | slice:0:6}}<br>
+{{obj | json}}<br>
+
+{{date | date}}<br>
+
+{{number | number:'1.2-3'}}
+<!-- digit.minDecimal-maxDecimal -->

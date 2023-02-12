@@ -1,0 +1,7 @@
+<div>
+    <h2>Employees</h2>
+    <ul *ngFor="let detail of Empdetails; index as idx">
+        <li>{{idx}}.) {{detail.first_name}} {{detail.last_name}}, emailId-{{detail.email}}</li>
+    </ul>
+    {{error}}
+</div>
